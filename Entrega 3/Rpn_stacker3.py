@@ -71,7 +71,7 @@ def rpn_stacker(operation):
 
 
 
-with open('C:/Users/gugac/Rpn_stacker/Entrega 3/Calc.stk', 'r') as inputs:
+with open('Calc.stk', 'r') as inputs:
     calculator = inputs.readlines()
 
 tokens = []

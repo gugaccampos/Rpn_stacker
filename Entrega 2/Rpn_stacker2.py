@@ -59,7 +59,7 @@ def rpn_stacker(operation):
 
 
 
-with open('C:/Users/gugac/Rpn_stacker/Entrega 2/Calc.stk', 'r') as inputs:
+with open('Calc.stk', 'r') as inputs:
     calculator = inputs.readlines()
 
 tokens = []
@@ -77,5 +77,7 @@ for line in calculator:
 
     tokens.append(token)
 
-result = rpn_stacker(tokens)
-print(f'Result = {result}')
+if not checker:
+
+    result = rpn_stacker(tokens)
+    print(f'Result = {result}')

@@ -1,16 +1,18 @@
 import re
 
-def isNum(symbol: str):
-    token = re.findall("[0-9]", symbol)
-    if token:
-        return True
-    return False
+class Regex:
 
-def isOP(symbol: str):
-    token = re.findall("[+-/*]", symbol)
-    if token:
-        return True
-    return False
+    def isNum(symbol: str):
+        token = re.findall("[0-9]", symbol)
+        if token:
+            return True
+        return False
+
+    def isOP(symbol: str):
+        token = re.findall("[+-/*]", symbol)
+        if token:
+            return True
+        return False
 
 
 def operation_procedures(stack, operator):
@@ -36,10 +38,10 @@ def operation_procedures(stack, operator):
 def classify_tokens(token):
     classifyer = []
 
-    if isNum(token):
+    if Regex.isNum(token):
         classifyer.append('TYPE = NUM')
         classifyer.append(f'lexeme = {token}')
-    elif isOP(token):
+    elif Regex.isOP(token):
         if token == '*':
             classifyer.append('TYPE = STAR')
             classifyer.append(f'lexeme = {token}')
@@ -84,7 +86,7 @@ for line in calculator:
     if line == '':
         continue
 
-    if isNum(line) or isOP(line):
+    if Regex.isNum(line) or Regex.isOP(line):
 
         token = classify_tokens(line)
         tokens.append(token)
